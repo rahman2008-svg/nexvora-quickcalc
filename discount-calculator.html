@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en" data-theme="dark" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discount & Savings Calculator – NexVora QuickCalc</title>
+    <meta name="description" content="Calculate discount percentages, final prices, stacked coupons, and total savings in Bangladeshi Taka (৳) and world currencies." />
+    
+    <!-- OpenGraph Social Cards -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Discount & Savings Calculator – NexVora QuickCalc" />
+    <meta property="og:description" content="Smart discount calculator supporting single discounts, extra coupon discounts, and Bangladeshi Taka (৳)." />
+    <meta property="og:image" content="assets/logo.svg" />
+    <meta property="og:site_name" content="NexVora QuickCalc" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Discount & Savings Calculator – NexVora QuickCalc" />
+    <meta name="twitter:description" content="Calculate shopping discounts, margins, and savings fast." />
+    <meta name="twitter:image" content="assets/logo.svg" />
+
+    <meta name="theme-color" content="#070b19" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="canonical" href="https://yourdomain.com/discount-calculator.html" />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="text-slate-100 flex flex-col justify-between">
+    <!-- Header -->
+    <header class="sticky top-0 z-40 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/logo.svg" alt="NexVora QuickCalc" class="h-9 w-auto" />
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="index.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navCalculator">Calculator</a>
+          <a href="percentage-calculator.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navPercentage">Percentage</a>
+          <a href="discount-calculator.html" class="text-cyan-400 font-semibold" data-i18n="navDiscount">Discount</a>
+          <a href="about.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navAbout">About</a>
+          <a href="help.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navHelp">Help</a>
+          <a href="privacy.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navPrivacy">Privacy</a>
+        </nav>
+
+        <div class="flex items-center gap-2.5">
+          <button type="button" class="lang-toggle px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800/80 hover:bg-slate-700 text-cyan-400 border border-slate-700/80 transition cursor-pointer">
+            বাংলা
+          </button>
+          <button type="button" class="theme-toggle p-2 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700/80 transition cursor-pointer">
+            <span class="theme-icon flex items-center justify-center">
+              <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+            </span>
+          </button>
+          <a href="index.html" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-cyan-950 text-cyan-300 border border-cyan-800/60 hover:bg-cyan-900/60 transition" data-i18n="btnBackHome">
+            Back to Calculator
+          </a>
+          <button type="button" id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobile-nav" class="hidden md:hidden border-b border-slate-800 bg-slate-900/95 px-4 pt-3 pb-5 space-y-2">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400" data-i18n="navCalculator">Calculator</a>
+        <a href="percentage-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400" data-i18n="navPercentage">Percentage</a>
+        <a href="discount-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium text-cyan-400 bg-slate-800/50" data-i18n="navDiscount">Discount</a>
+        <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400" data-i18n="navAbout">About</a>
+        <a href="help.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400" data-i18n="navHelp">Help</a>
+        <a href="privacy.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400" data-i18n="navPrivacy">Privacy</a>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+      <div class="text-center mb-8">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-2" data-i18n="discTitle">
+          Discount & Savings Calculator
+        </h1>
+        <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto" data-i18n="discSubtitle">
+          Calculate original vs final prices, stacked discounts, and total savings in BDT (৳) or your local currency.
+        </p>
+      </div>
+
+      <!-- Calculation Card -->
+      <div class="glass-panel p-6 sm:p-8 relative">
+        <form id="disc-form" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            
+            <!-- Currency selector -->
+            <div>
+              <label for="disc-currency" class="block text-xs font-semibold text-slate-300 mb-1.5" data-i18n="disclblCurrency">
+                Currency Symbol
+              </label>
+              <select id="disc-currency" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white font-mono focus:border-cyan-400 focus:outline-none transition">
+                <option value="৳" selected>৳ (BDT - Bangladeshi Taka)</option>
+                <option value="$">$ (USD - Dollar)</option>
+                <option value="€">€ (EUR - Euro)</option>
+                <option value="£">£ (GBP - British Pound)</option>
+                <option value="₹">₹ (INR - Indian Rupee)</option>
+              </select>
+            </div>
+
+            <!-- Original Price -->
+            <div>
+              <label for="disc-price" class="block text-xs font-semibold text-slate-300 mb-1.5" data-i18n="disclblPrice">
+                Original Price
+              </label>
+              <input type="number" step="any" min="0" id="disc-price" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white font-mono focus:border-cyan-400 focus:outline-none transition" placeholder="e.g. 1000" required />
+            </div>
+
+            <!-- Primary Discount % -->
+            <div>
+              <label for="disc-percent" class="block text-xs font-semibold text-slate-300 mb-1.5" data-i18n="disclblDiscount">
+                Discount (%)
+              </label>
+              <input type="number" step="any" min="0" max="100" id="disc-percent" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white font-mono focus:border-cyan-400 focus:outline-none transition" placeholder="e.g. 20" required />
+            </div>
+
+          </div>
+
+          <!-- Secondary Optional Discount Row -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="disc-extra-percent" class="block text-xs font-semibold text-slate-300 mb-1.5" data-i18n="disclblExtraDiscount">
+                Extra Discount (Optional %)
+              </label>
+              <input type="number" step="any" min="0" max="100" id="disc-extra-percent" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white font-mono focus:border-cyan-400 focus:outline-none transition" placeholder="e.g. 5" />
+            </div>
+
+            <div class="flex items-end gap-3">
+              <button type="submit" class="flex-1 py-3 px-6 rounded-xl font-bold text-white bg-gradient-to-r from-cyan-500 to-violet-600 hover:brightness-110 shadow-lg transition cursor-pointer" data-i18n="btnCalculate">
+                Calculate
+              </button>
+              <button type="button" id="disc-clear-btn" class="py-3 px-5 rounded-xl font-semibold text-slate-300 bg-slate-800 hover:bg-slate-700 border border-slate-700 transition cursor-pointer" data-i18n="btnClear">
+                Clear
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Final Results Presentation -->
+        <div class="mt-8 pt-6 border-t border-slate-800 space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            
+            <!-- Final Price Card -->
+            <div class="p-5 rounded-2xl bg-gradient-to-br from-cyan-950/60 to-slate-900/90 border border-cyan-800/60 flex flex-col justify-between">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs text-cyan-300 uppercase tracking-wider font-semibold" data-i18n="discFinalPrice">Final Price to Pay</span>
+                <button type="button" id="disc-copy-btn" class="px-3 py-1 rounded-lg bg-cyan-900/60 hover:bg-cyan-800/80 text-xs font-semibold text-cyan-200 flex items-center gap-1 border border-cyan-700/60 transition cursor-pointer" data-i18n="btnCopyFinal">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" /></svg>
+                  <span>Copy</span>
+                </button>
+              </div>
+              <div class="font-mono text-3xl sm:text-4xl font-extrabold text-white">
+                <span id="disc-res-curr">৳</span><span id="disc-res-final">800</span>
+              </div>
+            </div>
+
+            <!-- Savings Card -->
+            <div class="p-5 rounded-2xl bg-gradient-to-br from-violet-950/60 to-slate-900/90 border border-violet-800/60 flex flex-col justify-between">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs text-violet-300 uppercase tracking-wider font-semibold" data-i18n="discSavedAmount">Total Savings</span>
+                <span id="disc-effective-badge" class="px-2 py-0.5 rounded text-[11px] font-bold bg-violet-900/80 text-violet-200 border border-violet-700/60">
+                  20% OFF
+                </span>
+              </div>
+              <div class="font-mono text-3xl sm:text-4xl font-extrabold text-violet-300">
+                <span id="disc-res-saved-curr">৳</span><span id="disc-res-saved">200</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Step-by-Step Breakdown -->
+          <div class="p-4 rounded-xl bg-slate-900/70 border border-slate-800 text-xs space-y-2">
+            <h3 class="font-semibold text-slate-300 uppercase tracking-wider text-[11px]" data-i18n="discBreakdown">Price Breakdown</h3>
+            <div class="flex justify-between text-slate-400">
+              <span data-i18n="disclblPrice">Original Price:</span>
+              <span id="breakdown-orig" class="font-mono text-white">৳1,000</span>
+            </div>
+            <div class="flex justify-between text-slate-400">
+              <span>Primary Discount (<span id="breakdown-disc1-pct">20%</span>):</span>
+              <span id="breakdown-disc1-amt" class="font-mono text-cyan-400">-৳200</span>
+            </div>
+            <div id="breakdown-extra-row" class="hidden justify-between text-slate-400">
+              <span>Extra Discount (<span id="breakdown-disc2-pct">5%</span>):</span>
+              <span id="breakdown-disc2-amt" class="font-mono text-violet-400">-৳0</span>
+            </div>
+            <div class="pt-2 border-t border-slate-800 flex justify-between font-bold text-white text-sm">
+              <span data-i18n="discFinalPrice">Final Price:</span>
+              <span id="breakdown-total" class="font-mono text-cyan-400">৳800</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950/80 py-8 px-4 text-sm text-slate-400">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <img src="assets/favicon.svg" alt="NexVora" class="w-6 h-6" />
+          <span class="font-bold text-white">NexVora QuickCalc</span>
+          <span class="text-xs text-slate-500">v1.0.0</span>
+        </div>
+        <p class="text-xs text-slate-500">© 2026 NexVora Labs Ofc. All Rights Reserved. Developer: Prince AR Abdur Rahman</p>
+      </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast-notification" class="hidden fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-xl bg-slate-900 text-cyan-300 text-xs font-medium border border-cyan-500/40 shadow-xl transition-all duration-300 opacity-0 pointer-events-none">
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/translations.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/tools.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('disc-form');
+        const currSelect = document.getElementById('disc-currency');
+        const priceInput = document.getElementById('disc-price');
+        const percentInput = document.getElementById('disc-percent');
+        const extraInput = document.getElementById('disc-extra-percent');
+        const clearBtn = document.getElementById('disc-clear-btn');
+        const copyBtn = document.getElementById('disc-copy-btn');
+
+        const resCurr = document.getElementById('disc-res-curr');
+        const resFinal = document.getElementById('disc-res-final');
+        const resSavedCurr = document.getElementById('disc-res-saved-curr');
+        const resSaved = document.getElementById('disc-res-saved');
+        const effectiveBadge = document.getElementById('disc-effective-badge');
+
+        const bdOrig = document.getElementById('breakdown-orig');
+        const bdDisc1Pct = document.getElementById('breakdown-disc1-pct');
+        const bdDisc1Amt = document.getElementById('breakdown-disc1-amt');
+        const bdExtraRow = document.getElementById('breakdown-extra-row');
+        const bdDisc2Pct = document.getElementById('breakdown-disc2-pct');
+        const bdDisc2Amt = document.getElementById('breakdown-disc2-amt');
+        const bdTotal = document.getElementById('breakdown-total');
+
+        function calculate() {
+          const curr = currSelect.value;
+          const price = priceInput.value.trim();
+          const disc = percentInput.value.trim();
+          const extra = extraInput.value.trim() || '0';
+
+          if (price === '' || disc === '') return;
+
+          try {
+            const data = NexVoraTools.calcDiscount(price, disc, extra, curr);
+
+            resCurr.textContent = curr;
+            resSavedCurr.textContent = curr;
+            resFinal.textContent = NexVoraTools.formatNumber(data.finalPrice);
+            resSaved.textContent = NexVoraTools.formatNumber(data.totalSavings);
+            effectiveBadge.textContent = `${data.effectiveDiscountPercent}% OFF`;
+
+            bdOrig.textContent = `${curr}${NexVoraTools.formatNumber(data.originalPrice)}`;
+            bdDisc1Pct.textContent = `${data.firstDiscountPercent}%`;
+            bdDisc1Amt.textContent = `-${curr}${NexVoraTools.formatNumber(data.firstSavings)}`;
+
+            if (data.secondDiscountPercent > 0) {
+              bdExtraRow.classList.remove('hidden');
+              bdExtraRow.classList.add('flex');
+              bdDisc2Pct.textContent = `${data.secondDiscountPercent}%`;
+              bdDisc2Amt.textContent = `-${curr}${NexVoraTools.formatNumber(data.secondSavings)}`;
+            } else {
+              bdExtraRow.classList.add('hidden');
+              bdExtraRow.classList.remove('flex');
+            }
+
+            bdTotal.textContent = `${curr}${NexVoraTools.formatNumber(data.finalPrice)}`;
+          } catch (err) {
+            // Invalid
+          }
+        }
+
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          calculate();
+        });
+
+        currSelect.addEventListener('change', calculate);
+        priceInput.addEventListener('input', calculate);
+        percentInput.addEventListener('input', calculate);
+        extraInput.addEventListener('input', calculate);
+
+        clearBtn.addEventListener('click', () => {
+          priceInput.value = '';
+          percentInput.value = '';
+          extraInput.value = '';
+          resFinal.textContent = '0';
+          resSaved.textContent = '0';
+          effectiveBadge.textContent = '0% OFF';
+          bdOrig.textContent = currSelect.value + '0';
+          bdTotal.textContent = currSelect.value + '0';
+          bdExtraRow.classList.add('hidden');
+        });
+
+        copyBtn.addEventListener('click', () => {
+          const text = `${resCurr.textContent}${resFinal.textContent}`;
+          if (navigator.clipboard) {
+            navigator.clipboard.writeText(text).then(() => {
+              const toast = document.getElementById('toast-notification');
+              if (toast) {
+                toast.textContent = 'Final price copied!';
+                toast.classList.remove('hidden', 'opacity-0');
+                setTimeout(() => toast.classList.add('hidden', 'opacity-0'), 2000);
+              }
+            });
+          }
+        });
+
+        // Initialize sample calculation: 1000, 20% discount
+        priceInput.value = '1000';
+        percentInput.value = '20';
+        calculate();
+      });
+    </script>
+  </body>
+</html>

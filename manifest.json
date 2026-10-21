@@ -1,0 +1,27 @@
+{
+  "id": "/",
+  "name": "NexVora QuickCalc",
+  "short_name": "QuickCalc",
+  "description": "Calculate Fast. Live Smart. Premium online calculator, percentage, and discount calculation tools by NexVora Labs Ofc.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#070b19",
+  "theme_color": "#070b19",
+  "categories": ["utilities", "productivity", "finance"],
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "64x64 128x128 192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

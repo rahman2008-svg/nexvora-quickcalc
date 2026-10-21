@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en" data-theme="dark" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About – NexVora QuickCalc</title>
+    <meta name="description" content="Learn about NexVora QuickCalc, developed by Prince AR Abdur Rahman at NexVora Labs Ofc. High precision, privacy-first everyday calculation tools." />
+    
+    <!-- OpenGraph Social Cards -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About NexVora QuickCalc" />
+    <meta property="og:description" content="Calculate Fast. Live Smart. NexVora QuickCalc is built by Prince AR Abdur Rahman at NexVora Labs Ofc." />
+    <meta property="og:image" content="assets/logo.svg" />
+    <meta property="og:site_name" content="NexVora QuickCalc" />
+
+    <meta name="theme-color" content="#070b19" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="canonical" href="https://yourdomain.com/about.html" />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="text-slate-100 flex flex-col justify-between">
+    <!-- Header -->
+    <header class="sticky top-0 z-40 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/logo.svg" alt="NexVora QuickCalc" class="h-9 w-auto" />
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="index.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navCalculator">Calculator</a>
+          <a href="percentage-calculator.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navPercentage">Percentage</a>
+          <a href="discount-calculator.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navDiscount">Discount</a>
+          <a href="about.html" class="text-cyan-400 font-semibold" data-i18n="navAbout">About</a>
+          <a href="help.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navHelp">Help</a>
+          <a href="privacy.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navPrivacy">Privacy</a>
+        </nav>
+
+        <div class="flex items-center gap-2.5">
+          <button type="button" class="lang-toggle px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800/80 hover:bg-slate-700 text-cyan-400 border border-slate-700/80 transition cursor-pointer">
+            বাংলা
+          </button>
+          <button type="button" class="theme-toggle p-2 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700/80 transition cursor-pointer">
+            <span class="theme-icon flex items-center justify-center">
+              <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+            </span>
+          </button>
+          <a href="index.html" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-cyan-950 text-cyan-300 border border-cyan-800/60 hover:bg-cyan-900/60 transition" data-i18n="btnBackHome">
+            Back to Calculator
+          </a>
+          <button type="button" id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobile-nav" class="hidden md:hidden border-b border-slate-800 bg-slate-900/95 px-4 pt-3 pb-5 space-y-2">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400" data-i18n="navCalculator">Calculator</a>
+        <a href="percentage-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400" data-i18n="navPercentage">Percentage</a>
+        <a href="discount-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400" data-i18n="navDiscount">Discount</a>
+        <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-cyan-400 bg-slate-800/50" data-i18n="navAbout">About</a>
+        <a href="help.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400" data-i18n="navHelp">Help</a>
+        <a href="privacy.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400" data-i18n="navPrivacy">Privacy</a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+      <div class="text-center mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-800/60 text-cyan-300 text-xs font-semibold mb-3">
+          Version 1.0.0
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-2">
+          About NexVora QuickCalc
+        </h1>
+        <p class="text-slate-400 text-sm sm:text-base font-mono">
+          “Calculate Fast. Live Smart.”
+        </p>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Purpose Card -->
+        <div class="glass-panel p-6 sm:p-8">
+          <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            Our Purpose
+          </h2>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            <strong>NexVora QuickCalc</strong> was created to solve everyday computational challenges with speed, precision, and modern aesthetics. Whether you are a student preparing for examinations, a Bangladeshi shopkeeper balancing cash registers in Taka (৳), an office professional preparing spreadsheets, or someone shopping online, QuickCalc offers an instant, zero-distraction toolset that runs completely inside your browser.
+          </p>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            By avoiding unnecessary tracking scripts, account logins, and bloated frameworks, NexVora QuickCalc loads instantly and remains 100% operational even when completely offline.
+          </p>
+        </div>
+
+        <!-- Project Details Card -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="glass-panel p-6">
+            <h3 class="text-base font-bold text-white mb-3 flex items-center gap-2">
+              <svg class="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+              Organization & Developer
+            </h3>
+            <ul class="text-xs text-slate-300 space-y-2.5">
+              <li><strong class="text-slate-200">Product Name:</strong> NexVora QuickCalc</li>
+              <li><strong class="text-slate-200">Company:</strong> NexVora Labs Ofc</li>
+              <li><strong class="text-slate-200">Lead Developer:</strong> Prince AR Abdur Rahman</li>
+              <li><strong class="text-slate-200">Release Version:</strong> 1.0.0 (Production)</li>
+              <li><strong class="text-slate-200">Copyright:</strong> © 2026 NexVora Labs Ofc. All Rights Reserved.</li>
+            </ul>
+          </div>
+
+          <div class="glass-panel p-6">
+            <h3 class="text-base font-bold text-white mb-3 flex items-center gap-2">
+              <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+              Technology Stack
+            </h3>
+            <ul class="text-xs text-slate-300 space-y-2.5">
+              <li><strong class="text-slate-200">Markup:</strong> Semantic HTML5</li>
+              <li><strong class="text-slate-200">Styling:</strong> Modern CSS3 with Custom Glassmorphism</li>
+              <li><strong class="text-slate-200">Engine:</strong> Pure Vanilla JavaScript (Safe Shunting-Yard AST)</li>
+              <li><strong class="text-slate-200">Offline & Cache:</strong> W3C Service Worker & Web App Manifest</li>
+              <li><strong class="text-slate-200">Storage:</strong> Standard W3C LocalStorage API</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Target Audience Card -->
+        <div class="glass-panel p-6 sm:p-8">
+          <h3 class="text-base font-bold text-white mb-3">Designed for Diverse Audiences</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-slate-300">
+            <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+              <strong class="text-cyan-300 block mb-1">Students & Academics</strong>
+              Quick evaluations with bracket hierarchy, scientific notation, and percentage calculations.
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+              <strong class="text-violet-300 block mb-1">Shopkeepers & Retailers</strong>
+              Instant discount and tax calculations in Bangladeshi Taka (৳) and international currencies.
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+              <strong class="text-cyan-300 block mb-1">Office & General Users</strong>
+              Clean desktop keyboard shortcuts, memory registers, and copy-paste clipboard workflows.
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950/80 py-8 px-4 text-sm text-slate-400">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <img src="assets/favicon.svg" alt="NexVora" class="w-6 h-6" />
+          <span class="font-bold text-white">NexVora QuickCalc</span>
+          <span class="text-xs text-slate-500">v1.0.0</span>
+        </div>
+        <p class="text-xs text-slate-500">© 2026 NexVora Labs Ofc. All Rights Reserved. Developer: Prince AR Abdur Rahman</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/translations.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/tools.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

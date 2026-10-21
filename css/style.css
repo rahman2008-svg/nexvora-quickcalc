@@ -1,0 +1,221 @@
+/**
+ * NexVora QuickCalc - Luxury Dark & Glassmorphism Design System
+ * Copyright © 2026 NexVora Labs Ofc. All Rights Reserved.
+ * Developer: Prince AR Abdur Rahman
+ */
+
+:root {
+  /* Color Palette - Dark Luxury Default */
+  --bg-primary: #070b19;
+  --bg-secondary: #0c142e;
+  --bg-surface: rgba(15, 23, 42, 0.75);
+  --bg-surface-elevated: rgba(22, 34, 64, 0.85);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(6, 182, 212, 0.35);
+
+  --accent-cyan: #00f2fe;
+  --accent-cyan-dark: #0891b2;
+  --accent-violet: #8b5cf6;
+  --accent-violet-dark: #6d28d9;
+  
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  
+  --btn-num-bg: rgba(30, 41, 59, 0.7);
+  --btn-num-hover: rgba(51, 65, 85, 0.9);
+  --btn-num-text: #f1f5f9;
+  
+  --btn-op-bg: rgba(14, 116, 144, 0.25);
+  --btn-op-hover: rgba(14, 116, 144, 0.45);
+  --btn-op-text: #38bdf8;
+  --btn-op-border: rgba(56, 189, 248, 0.3);
+
+  --btn-func-bg: rgba(109, 40, 217, 0.25);
+  --btn-func-hover: rgba(109, 40, 217, 0.45);
+  --btn-func-text: #c084fc;
+  --btn-func-border: rgba(192, 132, 252, 0.3);
+
+  --btn-equals-bg: linear-gradient(135deg, #00f2fe 0%, #8b5cf6 100%);
+  --btn-equals-text: #ffffff;
+  --btn-equals-shadow: 0 4px 20px rgba(0, 242, 254, 0.35);
+
+  --glass-blur: blur(16px);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+}
+
+[data-theme="light"] {
+  --bg-primary: #f1f5f9;
+  --bg-secondary: #e2e8f0;
+  --bg-surface: rgba(255, 255, 255, 0.85);
+  --bg-surface-elevated: rgba(255, 255, 255, 0.95);
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-glow: rgba(8, 145, 178, 0.4);
+
+  --accent-cyan: #0891b2;
+  --accent-cyan-dark: #0e7490;
+  --accent-violet: #7c3aed;
+  --accent-violet-dark: #6d28d9;
+
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-dim: #94a3b8;
+
+  --btn-num-bg: #ffffff;
+  --btn-num-hover: #f8fafc;
+  --btn-num-text: #1e293b;
+
+  --btn-op-bg: #e0f2fe;
+  --btn-op-hover: #bae6fd;
+  --btn-op-text: #0284c7;
+  --btn-op-border: #7dd3fc;
+
+  --btn-func-bg: #f3e8ff;
+  --btn-func-hover: #e9d5ff;
+  --btn-func-text: #7e22ce;
+  --btn-func-border: #d8b4fe;
+
+  --btn-equals-bg: linear-gradient(135deg, #0284c7 0%, #7c3aed 100%);
+  --btn-equals-text: #ffffff;
+  --btn-equals-shadow: 0 4px 15px rgba(2, 132, 199, 0.3);
+}
+
+/* Base Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Hind Siliguri', 'Kalpurush', sans-serif;
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  transition: background-color 0.25s ease, color 0.25s ease;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(circle at 15% 10%, rgba(0, 242, 254, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(139, 92, 246, 0.08) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* Accessible focus ring */
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+}
+
+/* Glass Card */
+.glass-panel {
+  background: var(--bg-surface);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4);
+}
+
+.glass-panel-elevated {
+  background: var(--bg-surface-elevated);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* Gradient Texts & Accents */
+.text-gradient {
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-violet) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.badge-glow {
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
+}
+
+/* Calculator Keypad Buttons */
+.calc-btn {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  min-height: 52px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  transition: transform 0.08s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  touch-action: manipulation;
+}
+
+.calc-btn:active {
+  transform: scale(0.96);
+}
+
+.calc-btn-num {
+  background-color: var(--btn-num-bg);
+  color: var(--btn-num-text);
+  border-color: var(--border-subtle);
+}
+
+.calc-btn-num:hover {
+  background-color: var(--btn-num-hover);
+}
+
+.calc-btn-op {
+  background-color: var(--btn-op-bg);
+  color: var(--btn-op-text);
+  border-color: var(--btn-op-border);
+}
+
+.calc-btn-op:hover {
+  background-color: var(--btn-op-hover);
+}
+
+.calc-btn-func {
+  background-color: var(--btn-func-bg);
+  color: var(--btn-func-text);
+  border-color: var(--btn-func-border);
+  font-size: 1rem;
+}
+
+.calc-btn-func:hover {
+  background-color: var(--btn-func-hover);
+}
+
+.calc-btn-equals {
+  background: var(--btn-equals-bg);
+  color: var(--btn-equals-text);
+  box-shadow: var(--btn-equals-shadow);
+  font-size: 1.5rem;
+}
+
+.calc-btn-equals:hover {
+  filter: brightness(1.1);
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

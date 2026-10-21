@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" width="280" height="64">
+  <defs>
+    <linearGradient id="logoBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a102b" />
+      <stop offset="100%" stop-color="#050814" />
+    </linearGradient>
+    <linearGradient id="cyanViolet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <linearGradient id="violetCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#00f2fe" />
+    </linearGradient>
+    <filter id="logoGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Emblem Container -->
+  <g transform="translate(6, 6)">
+    <!-- Shield / Hexagon Frame -->
+    <rect width="52" height="52" rx="14" fill="url(#logoBgGrad)" stroke="url(#cyanViolet)" stroke-width="1.8" />
+    
+    <!-- Calculator Screen -->
+    <rect x="12" y="11" width="28" height="9" rx="2.5" fill="#0f1b3b" stroke="#00f2fe" stroke-width="1" />
+    <circle cx="16" cy="15.5" r="1.5" fill="#00f2fe" />
+    <line x1="22" y1="15.5" x2="35" y2="15.5" stroke="#00f2fe" stroke-width="1.5" stroke-linecap="round" />
+
+    <!-- Calculator Keypad Dots -->
+    <circle cx="17" cy="26" r="2.2" fill="#8b5cf6" />
+    <circle cx="26" cy="26" r="2.2" fill="#00f2fe" />
+    <circle cx="35" cy="26" r="2.2" fill="#8b5cf6" />
+
+    <circle cx="17" cy="34" r="2.2" fill="#00f2fe" />
+    <circle cx="26" cy="34" r="2.2" fill="#8b5cf6" />
+    <circle cx="35" cy="34" r="2.2" fill="#00f2fe" />
+
+    <!-- Stylized dynamic Q/Slash Tail -->
+    <path d="M29 32 L44 44" stroke="url(#cyanViolet)" stroke-width="3" stroke-linecap="round" filter="url(#logoGlow)" />
+  </g>
+
+  <!-- Brand Typography -->
+  <g transform="translate(68, 16)">
+    <!-- NexVora -->
+    <text x="0" y="20" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800" letter-spacing="0.5" fill="#ffffff">
+      Nex<tspan fill="url(#cyanViolet)">Vora</tspan>
+    </text>
+    <!-- QuickCalc badge/accent text -->
+    <text x="92" y="20" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="700" letter-spacing="0.2" fill="#38bdf8">
+      Quick<tspan fill="#a78bfa">Calc</tspan>
+    </text>
+    <!-- Tagline -->
+    <text x="1" y="35" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="500" letter-spacing="1.4" fill="#94a3b8">
+      CALCULATE FAST. LIVE SMART.
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en" data-theme="dark" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Percentage Calculator – NexVora QuickCalc</title>
+    <meta name="description" content="Calculate percentages, ratios, percentage increase, and percentage decrease fast with real-time formulas and Bangla support." />
+    
+    <!-- OpenGraph Social Cards -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Percentage Calculator – NexVora QuickCalc" />
+    <meta property="og:description" content="Calculate X% of Y, ratios, percentage increase, and decrease with step-by-step mathematical breakdowns." />
+    <meta property="og:image" content="assets/logo.svg" />
+    <meta property="og:site_name" content="NexVora QuickCalc" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Percentage Calculator – NexVora QuickCalc" />
+    <meta name="twitter:description" content="Calculate fast. Real-time percentage breakdowns, ratios, and increase/decrease calculations." />
+    <meta name="twitter:image" content="assets/logo.svg" />
+
+    <meta name="theme-color" content="#070b19" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="canonical" href="https://yourdomain.com/percentage-calculator.html" />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="text-slate-100 flex flex-col justify-between">
+    <!-- Header -->
+    <header class="sticky top-0 z-40 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/logo.svg" alt="NexVora QuickCalc" class="h-9 w-auto" />
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="index.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navCalculator">Calculator</a>
+          <a href="percentage-calculator.html" class="text-cyan-400 font-semibold" data-i18n="navPercentage">Percentage</a>
+          <a href="discount-calculator.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navDiscount">Discount</a>
+          <a href="about.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navAbout">About</a>
+          <a href="help.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navHelp">Help</a>
+          <a href="privacy.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navPrivacy">Privacy</a>
+        </nav>
+
+        <div class="flex items-center gap-2.5">
+          <button type="button" class="lang-toggle px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800/80 hover:bg-slate-700 text-cyan-400 border border-slate-700/80 transition cursor-pointer">
+            বাংলা
+          </button>
+          <button type="button" class="theme-toggle p-2 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700/80 transition cursor-pointer">
+            <span class="theme-icon flex items-center justify-center">
+              <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+            </span>
+          </button>
+          <a href="index.html" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-cyan-950 text-cyan-300 border border-cyan-800/60 hover:bg-cyan-900/60 transition" data-i18n="btnBackHome">
+            Back to Calculator
+          </a>
+          <button type="button" id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobile-nav" class="hidden md:hidden border-b border-slate-800 bg-slate-900/95 px-4 pt-3 pb-5 space-y-2">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400" data-i18n="navCalculator">Calculator</a>
+        <a href="percentage-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium text-cyan-400 bg-slate-800/50" data-i18n="navPercentage">Percentage</a>
+        <a href="discount-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400" data-i18n="navDiscount">Discount</a>
+        <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400" data-i18n="navAbout">About</a>
+        <a href="help.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400" data-i18n="navHelp">Help</a>
+        <a href="privacy.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400" data-i18n="navPrivacy">Privacy</a>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+      <!-- Title -->
+      <div class="text-center mb-8">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-2" data-i18n="percTitle">
+          Percentage Calculator
+        </h1>
+        <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto" data-i18n="percSubtitle">
+          Solve standard percentages, ratios, increases, and decreases with real-time breakdowns.
+        </p>
+      </div>
+
+      <!-- Mode Selector Tabs -->
+      <div class="glass-panel p-2 mb-6 flex flex-wrap gap-2 justify-center">
+        <button type="button" class="perc-tab-btn active px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition cursor-pointer bg-cyan-500/20 text-cyan-300 border border-cyan-500/40" data-tab="tab1" data-i18n="percTab1">
+          X% of Y
+        </button>
+        <button type="button" class="perc-tab-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-slate-400 hover:text-white transition cursor-pointer" data-tab="tab2" data-i18n="percTab2">
+          X is what % of Y?
+        </button>
+        <button type="button" class="perc-tab-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-slate-400 hover:text-white transition cursor-pointer" data-tab="tab3" data-i18n="percTab3">
+          % Increase
+        </button>
+        <button type="button" class="perc-tab-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-slate-400 hover:text-white transition cursor-pointer" data-tab="tab4" data-i18n="percTab4">
+          % Decrease
+        </button>
+      </div>
+
+      <!-- Calculation Card -->
+      <div class="glass-panel p-6 sm:p-8 relative">
+        <form id="perc-form" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label id="input1-label" for="perc-input-1" class="block text-xs font-semibold text-slate-300 mb-1.5" data-i18n="perclblPercent">
+                Percentage (%)
+              </label>
+              <input type="number" step="any" id="perc-input-1" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white font-mono focus:border-cyan-400 focus:outline-none transition" placeholder="e.g. 15" required />
+            </div>
+
+            <div>
+              <label id="input2-label" for="perc-input-2" class="block text-xs font-semibold text-slate-300 mb-1.5" data-i18n="perclblTotal">
+                Total Value (Y)
+              </label>
+              <input type="number" step="any" id="perc-input-2" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700/80 text-white font-mono focus:border-cyan-400 focus:outline-none transition" placeholder="e.g. 200" required />
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button type="submit" class="flex-1 py-3 px-6 rounded-xl font-bold text-white bg-gradient-to-r from-cyan-500 to-violet-600 hover:brightness-110 shadow-lg transition cursor-pointer" data-i18n="btnCalculate">
+              Calculate
+            </button>
+            <button type="button" id="perc-clear-btn" class="py-3 px-6 rounded-xl font-semibold text-slate-300 bg-slate-800 hover:bg-slate-700 border border-slate-700 transition cursor-pointer" data-i18n="btnClear">
+              Clear
+            </button>
+          </div>
+        </form>
+
+        <!-- Result Box -->
+        <div id="perc-result-card" class="mt-8 pt-6 border-t border-slate-800 space-y-4">
+          <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-slate-400 uppercase tracking-wider block" data-i18n="lblResult">Result</span>
+              <span id="perc-result-val" class="font-mono text-2xl sm:text-3xl font-extrabold text-cyan-400">30</span>
+            </div>
+            <button type="button" id="perc-copy-btn" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 hover:text-white flex items-center gap-1.5 border border-slate-700 transition cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" /></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+            <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+              <span class="text-slate-400 font-semibold block mb-1" data-i18n="lblFormula">Formula Used</span>
+              <code id="perc-formula-val" class="font-mono text-slate-200 text-sm">(15 ÷ 100) × 200</code>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+              <span class="text-slate-400 font-semibold block mb-1" data-i18n="lblExplanation">Explanation</span>
+              <p id="perc-explain-val" class="text-slate-300">15% of 200 is 30</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Educational Formula Guide -->
+      <div class="mt-12 glass-panel p-6">
+        <h2 class="text-base font-bold text-white mb-3">Understanding Percentage Mathematics</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-300">
+          <div class="p-3 rounded-lg bg-slate-900/50 border border-slate-800">
+            <strong class="text-cyan-400 block mb-1">Standard Percentage (X% of Y)</strong>
+            <p>Calculates the proportional fraction of a quantity: <code>P = (X / 100) × Y</code>.</p>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/50 border border-slate-800">
+            <strong class="text-cyan-400 block mb-1">Ratio to Percentage</strong>
+            <p>Determines what proportion X represents out of whole Y: <code>P = (X / Y) × 100</code>.</p>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/50 border border-slate-800">
+            <strong class="text-violet-400 block mb-1">Percentage Increase</strong>
+            <p>Measures proportional growth between initial X and final Y: <code>((Y - X) / X) × 100</code>.</p>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/50 border border-slate-800">
+            <strong class="text-violet-400 block mb-1">Percentage Decrease</strong>
+            <p>Measures proportional drop from original X to lower Y: <code>((X - Y) / X) × 100</code>.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950/80 py-8 px-4 text-sm text-slate-400">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <img src="assets/favicon.svg" alt="NexVora" class="w-6 h-6" />
+          <span class="font-bold text-white">NexVora QuickCalc</span>
+          <span class="text-xs text-slate-500">v1.0.0</span>
+        </div>
+        <p class="text-xs text-slate-500">© 2026 NexVora Labs Ofc. All Rights Reserved. Developer: Prince AR Abdur Rahman</p>
+      </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast-notification" class="hidden fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-xl bg-slate-900 text-cyan-300 text-xs font-medium border border-cyan-500/40 shadow-xl transition-all duration-300 opacity-0 pointer-events-none">
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/translations.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/tools.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Interactive script for percentage tabs and calculation -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        let currentTab = 'tab1';
+        const form = document.getElementById('perc-form');
+        const input1 = document.getElementById('perc-input-1');
+        const input2 = document.getElementById('perc-input-2');
+        const label1 = document.getElementById('input1-label');
+        const label2 = document.getElementById('input2-label');
+        const resultVal = document.getElementById('perc-result-val');
+        const formulaVal = document.getElementById('perc-formula-val');
+        const explainVal = document.getElementById('perc-explain-val');
+        const clearBtn = document.getElementById('perc-clear-btn');
+        const copyBtn = document.getElementById('perc-copy-btn');
+        const tabs = document.querySelectorAll('.perc-tab-btn');
+
+        const activeLang = localStorage.getItem('nexvora_lang') || 'en';
+
+        function updateLabels() {
+          const l = localStorage.getItem('nexvora_lang') || 'en';
+          if (currentTab === 'tab1') {
+            label1.textContent = t('perclblPercent', l);
+            label2.textContent = t('perclblTotal', l);
+            input1.placeholder = 'e.g. 15';
+            input2.placeholder = 'e.g. 200';
+          } else if (currentTab === 'tab2') {
+            label1.textContent = t('perclblPart', l);
+            label2.textContent = t('perclblTotal', l);
+            input1.placeholder = 'e.g. 30';
+            input2.placeholder = 'e.g. 200';
+          } else if (currentTab === 'tab3') {
+            label1.textContent = t('perclblInitial', l);
+            label2.textContent = t('perclblFinal', l);
+            input1.placeholder = 'e.g. 100';
+            input2.placeholder = 'e.g. 150';
+          } else if (currentTab === 'tab4') {
+            label1.textContent = t('perclblInitial', l);
+            label2.textContent = t('perclblFinal', l);
+            input1.placeholder = 'e.g. 200';
+            input2.placeholder = 'e.g. 150';
+          }
+        }
+
+        tabs.forEach(btn => {
+          btn.addEventListener('click', () => {
+            tabs.forEach(t => {
+              t.classList.remove('bg-cyan-500/20', 'text-cyan-300', 'border', 'border-cyan-500/40');
+              t.classList.add('text-slate-400');
+            });
+            btn.classList.add('bg-cyan-500/20', 'text-cyan-300', 'border', 'border-cyan-500/40');
+            btn.classList.remove('text-slate-400');
+            currentTab = btn.getAttribute('data-tab');
+            updateLabels();
+            calculate();
+          });
+        });
+
+        function calculate() {
+          const v1 = input1.value.trim();
+          const v2 = input2.value.trim();
+          if (v1 === '' || v2 === '') return;
+
+          try {
+            let res;
+            if (currentTab === 'tab1') {
+              res = NexVoraTools.calcPercentOf(v1, v2);
+              resultVal.textContent = res.result;
+            } else if (currentTab === 'tab2') {
+              res = NexVoraTools.calcWhatPercentIs(v1, v2);
+              resultVal.textContent = res.result + '%';
+            } else if (currentTab === 'tab3') {
+              res = NexVoraTools.calcPercentIncrease(v1, v2);
+              resultVal.textContent = '+' + res.result + '%';
+            } else if (currentTab === 'tab4') {
+              res = NexVoraTools.calcPercentDecrease(v1, v2);
+              resultVal.textContent = '-' + res.result + '%';
+            }
+            formulaVal.textContent = res.formula;
+            explainVal.textContent = res.explanation;
+          } catch (err) {
+            resultVal.textContent = err.message || 'Error';
+            formulaVal.textContent = '-';
+            explainVal.textContent = err.message || 'Invalid input';
+          }
+        }
+
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          calculate();
+        });
+
+        input1.addEventListener('input', calculate);
+        input2.addEventListener('input', calculate);
+
+        clearBtn.addEventListener('click', () => {
+          input1.value = '';
+          input2.value = '';
+          resultVal.textContent = '0';
+          formulaVal.textContent = '-';
+          explainVal.textContent = '-';
+        });
+
+        copyBtn.addEventListener('click', () => {
+          const val = resultVal.textContent;
+          if (navigator.clipboard) {
+            navigator.clipboard.writeText(val).then(() => {
+              const toast = document.getElementById('toast-notification');
+              if (toast) {
+                toast.textContent = 'Result copied!';
+                toast.classList.remove('hidden', 'opacity-0');
+                setTimeout(() => toast.classList.add('hidden', 'opacity-0'), 2000);
+              }
+            });
+          }
+        });
+
+        // Initialize default sample values
+        input1.value = '15';
+        input2.value = '200';
+        calculate();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+# robots.txt for NexVora QuickCalc
+# Allow all web crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location (replace https://yourdomain.com with your actual deployment domain, e.g., GitHub Pages or Vercel URL)
+Sitemap: https://yourdomain.com/sitemap.xml

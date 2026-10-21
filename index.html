@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en" data-theme="dark" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexVora QuickCalc – Free Online Calculator & Precision Tools</title>
+    <meta name="description" content="Calculate Fast. Live Smart. NexVora QuickCalc provides high-precision arithmetic, memory registers, calculation history, percentage, and discount calculation tools." />
+    
+    <!-- OpenGraph Social Cards -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="NexVora QuickCalc – Calculate Fast. Live Smart." />
+    <meta property="og:description" content="Free online calculator and everyday precision calculation tools by NexVora Labs Ofc. Includes English and Bangla options with offline PWA support." />
+    <meta property="og:image" content="assets/logo.svg" />
+    <meta property="og:site_name" content="NexVora QuickCalc" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NexVora QuickCalc – Smart Precision Calculator" />
+    <meta name="twitter:description" content="Calculate Fast. Live Smart. Premium dark luxury online calculator by NexVora Labs Ofc." />
+    <meta name="twitter:image" content="assets/logo.svg" />
+
+    <!-- Mobile & PWA -->
+    <meta name="theme-color" content="#070b19" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="QuickCalc" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="apple-touch-icon" href="assets/favicon.svg" />
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Canonical URL Placeholder: replace yourdomain.com with your actual deployment URL -->
+    <link rel="canonical" href="https://yourdomain.com/index.html" />
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "NexVora QuickCalc",
+      "url": "https://yourdomain.com",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "description": "Free precision calculator and tools by NexVora Labs Ofc with English and Bangla bilingual support.",
+      "author": {
+        "@type": "Person",
+        "name": "Prince AR Abdur Rahman"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "NexVora Labs Ofc"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="text-slate-100 flex flex-col justify-between">
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <!-- Brand Logo -->
+        <a href="index.html" class="flex items-center gap-3 transition-transform hover:opacity-95">
+          <img src="assets/logo.svg" alt="NexVora QuickCalc" class="h-9 w-auto" />
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="index.html" class="text-cyan-400 font-semibold flex items-center gap-1.5 transition" data-i18n="navCalculator">Calculator</a>
+          <a href="percentage-calculator.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navPercentage">Percentage</a>
+          <a href="discount-calculator.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navDiscount">Discount</a>
+          <a href="about.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navAbout">About</a>
+          <a href="help.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navHelp">Help</a>
+          <a href="privacy.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navPrivacy">Privacy</a>
+        </nav>
+
+        <!-- Right Controls: Lang, Theme, Install, Mobile Hamburger -->
+        <div class="flex items-center gap-2.5">
+          <!-- Offline indicator badge -->
+          <span id="offline-indicator" class="hidden px-2.5 py-1 text-xs font-semibold rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 flex items-center gap-1">
+            <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+            <span data-i18n="offlineBadge">Offline Ready</span>
+          </span>
+
+          <!-- Language Switcher -->
+          <button type="button" class="lang-toggle px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800/80 hover:bg-slate-700 text-cyan-400 border border-slate-700/80 transition cursor-pointer" aria-label="Toggle language">
+            বাংলা
+          </button>
+
+          <!-- Theme Switcher -->
+          <button type="button" class="theme-toggle p-2 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700/80 transition cursor-pointer" aria-label="Toggle theme">
+            <span class="theme-icon flex items-center justify-center">
+              <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+            </span>
+          </button>
+
+          <!-- PWA Install Button -->
+          <button type="button" id="pwa-install-btn" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-cyan-500 to-violet-600 text-white shadow-md hover:brightness-110 transition cursor-pointer" data-i18n="installApp">
+            Install App
+          </button>
+
+          <!-- Mobile Hamburger Menu Button -->
+          <button type="button" id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-slate-800/80 text-slate-300 hover:text-white border border-slate-700" aria-label="Open menu">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div id="mobile-nav" class="hidden md:hidden border-b border-slate-800 bg-slate-900/95 px-4 pt-3 pb-5 space-y-2">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-cyan-400 bg-slate-800/50" data-i18n="navCalculator">Calculator</a>
+        <a href="percentage-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/30" data-i18n="navPercentage">Percentage</a>
+        <a href="discount-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/30" data-i18n="navDiscount">Discount</a>
+        <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/30" data-i18n="navAbout">About</a>
+        <a href="help.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/30" data-i18n="navHelp">Help</a>
+        <a href="privacy.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/30" data-i18n="navPrivacy">Privacy</a>
+      </div>
+    </header>
+
+    <!-- Main Content Layout -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+      
+      <!-- Hero Header -->
+      <div class="text-center mb-8">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-2" data-i18n="calcHeading">
+          Smart Precision Calculator
+        </h1>
+        <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto" data-i18n="calcSubheading">
+          Fast, elegant decimal arithmetic with memory registers & local history.
+        </p>
+      </div>
+
+      <!-- Main Calculator & History Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Calculator Machine (7 cols on desktop) -->
+        <div class="lg:col-span-7 flex flex-col items-center">
+          <div class="glass-panel w-full max-w-md p-5 sm:p-6 shadow-2xl relative">
+            
+            <!-- Display Screen -->
+            <div class="rounded-2xl bg-slate-950/90 border border-slate-800 p-4 mb-5 relative overflow-hidden flex flex-col justify-between min-h-[120px] shadow-inner">
+              <!-- Top bar: Memory badge and Copy button -->
+              <div class="flex items-center justify-between text-xs text-slate-500 mb-1">
+                <span id="memory-indicator" class="opacity-0 px-2 py-0.5 rounded font-mono font-bold bg-cyan-950 text-cyan-400 border border-cyan-800/60 transition-opacity">
+                  M
+                </span>
+                <button type="button" data-calc-action="copy" class="text-slate-400 hover:text-cyan-400 flex items-center gap-1 transition px-2 py-0.5 rounded hover:bg-slate-800/60 cursor-pointer" title="Copy result">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" /></svg>
+                  <span>Copy</span>
+                </button>
+              </div>
+
+              <!-- Expression row (scrolls horizontally on long formulas) -->
+              <div id="calc-expression" class="font-mono text-sm text-slate-400 text-right overflow-x-auto whitespace-nowrap scrollbar-none tracking-wider min-h-[20px]">
+                &nbsp;
+              </div>
+
+              <!-- Main Result row -->
+              <div id="calc-result" class="font-mono text-3xl sm:text-4xl font-bold text-white text-right overflow-x-auto whitespace-nowrap scrollbar-none tracking-tight">
+                0
+              </div>
+            </div>
+
+            <!-- Keypad -->
+            <div class="space-y-2.5">
+              
+              <!-- Row 1: Memory Functions -->
+              <div class="grid grid-cols-5 gap-2">
+                <button type="button" data-calc-action="mc" class="calc-btn calc-btn-func !min-h-[42px] !text-xs font-mono" title="Memory Clear">MC</button>
+                <button type="button" data-calc-action="mr" class="calc-btn calc-btn-func !min-h-[42px] !text-xs font-mono" title="Memory Recall">MR</button>
+                <button type="button" data-calc-action="m-plus" class="calc-btn calc-btn-func !min-h-[42px] !text-xs font-mono" title="Memory Add">M+</button>
+                <button type="button" data-calc-action="m-minus" class="calc-btn calc-btn-func !min-h-[42px] !text-xs font-mono" title="Memory Subtract">M−</button>
+                <button type="button" data-calc-action="ms" class="calc-btn calc-btn-func !min-h-[42px] !text-xs font-mono" title="Memory Store">MS</button>
+              </div>
+
+              <!-- Row 2: Clear & Helper Controls -->
+              <div class="grid grid-cols-4 gap-2">
+                <button type="button" data-calc-action="clear" class="calc-btn bg-red-950/40 text-red-400 border border-red-800/40 hover:bg-red-900/50 font-bold" title="Clear All (Escape)">AC</button>
+                <button type="button" data-calc-action="clear-entry" class="calc-btn calc-btn-func font-semibold" title="Clear Entry">CE</button>
+                <button type="button" data-calc-action="backspace" class="calc-btn calc-btn-func font-semibold" title="Backspace (⌫)">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6-7h11a2 2 0 012 2v10a2 2 0 01-2 2H9l-6-7z" /></svg>
+                </button>
+                <button type="button" data-calc-action="operator" data-calc-val="/" class="calc-btn calc-btn-op text-xl font-bold" title="Divide (÷)">÷</button>
+              </div>
+
+              <!-- Row 3: 7 8 9 × -->
+              <div class="grid grid-cols-4 gap-2">
+                <button type="button" data-calc-action="digit" data-calc-val="7" class="calc-btn calc-btn-num">7</button>
+                <button type="button" data-calc-action="digit" data-calc-val="8" class="calc-btn calc-btn-num">8</button>
+                <button type="button" data-calc-action="digit" data-calc-val="9" class="calc-btn calc-btn-num">9</button>
+                <button type="button" data-calc-action="operator" data-calc-val="*" class="calc-btn calc-btn-op text-xl font-bold" title="Multiply (×)">×</button>
+              </div>
+
+              <!-- Row 4: 4 5 6 − -->
+              <div class="grid grid-cols-4 gap-2">
+                <button type="button" data-calc-action="digit" data-calc-val="4" class="calc-btn calc-btn-num">4</button>
+                <button type="button" data-calc-action="digit" data-calc-val="5" class="calc-btn calc-btn-num">5</button>
+                <button type="button" data-calc-action="digit" data-calc-val="6" class="calc-btn calc-btn-num">6</button>
+                <button type="button" data-calc-action="operator" data-calc-val="-" class="calc-btn calc-btn-op text-xl font-bold" title="Subtract (−)">−</button>
+              </div>
+
+              <!-- Row 5: 1 2 3 + -->
+              <div class="grid grid-cols-4 gap-2">
+                <button type="button" data-calc-action="digit" data-calc-val="1" class="calc-btn calc-btn-num">1</button>
+                <button type="button" data-calc-action="digit" data-calc-val="2" class="calc-btn calc-btn-num">2</button>
+                <button type="button" data-calc-action="digit" data-calc-val="3" class="calc-btn calc-btn-num">3</button>
+                <button type="button" data-calc-action="operator" data-calc-val="+" class="calc-btn calc-btn-op text-xl font-bold" title="Add (+)">+</button>
+              </div>
+
+              <!-- Row 6: ± 0 . % (Parentheses and Special) -->
+              <div class="grid grid-cols-4 gap-2">
+                <button type="button" data-calc-action="toggle-sign" class="calc-btn calc-btn-func text-base font-semibold" title="Toggle Sign (±)">±</button>
+                <button type="button" data-calc-action="digit" data-calc-val="0" class="calc-btn calc-btn-num">0</button>
+                <button type="button" data-calc-action="digit" data-calc-val="00" class="calc-btn calc-btn-num text-lg">00</button>
+                <button type="button" data-calc-action="digit" data-calc-val="." class="calc-btn calc-btn-num text-2xl font-bold">.</button>
+              </div>
+
+              <!-- Row 7: ( ) % = -->
+              <div class="grid grid-cols-4 gap-2">
+                <button type="button" data-calc-action="paren-open" class="calc-btn calc-btn-func font-semibold" title="Open Parenthesis">(</button>
+                <button type="button" data-calc-action="paren-close" class="calc-btn calc-btn-func font-semibold" title="Close Parenthesis">)</button>
+                <button type="button" data-calc-action="operator" data-calc-val="%" class="calc-btn calc-btn-func font-semibold" title="Percentage (%)">%</button>
+                <button type="button" data-calc-action="equals" class="calc-btn calc-btn-equals" title="Calculate (Enter or =)">=</button>
+              </div>
+
+            </div>
+
+            <!-- Footer indicator: Ans button -->
+            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <span class="flex items-center gap-1">
+                <kbd class="px-1.5 py-0.5 rounded bg-slate-800 text-[10px] text-slate-300 font-mono">0-9</kbd>
+                <kbd class="px-1.5 py-0.5 rounded bg-slate-800 text-[10px] text-slate-300 font-mono">+ - * /</kbd>
+                <kbd class="px-1.5 py-0.5 rounded bg-slate-800 text-[10px] text-slate-300 font-mono">Enter</kbd>
+              </span>
+              <button type="button" data-calc-action="ans" class="px-2.5 py-1 rounded bg-slate-800/80 hover:bg-slate-700 text-cyan-300 font-mono text-xs font-semibold transition cursor-pointer">
+                Ans
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- History & Tools Panel (5 cols on desktop) -->
+        <div class="lg:col-span-5 space-y-6">
+          
+          <!-- History Card -->
+          <div class="glass-panel p-5">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
+              <h2 class="text-base font-bold text-white flex items-center gap-2" data-i18n="historyTitle">
+                <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                Calculation History
+              </h2>
+              <button type="button" id="open-clear-history-btn" class="text-xs text-slate-400 hover:text-red-400 flex items-center gap-1 transition cursor-pointer" data-i18n="clearHistoryBtn">
+                Clear History
+              </button>
+            </div>
+
+            <!-- History List container -->
+            <div id="history-list" class="space-y-2 max-h-[310px] overflow-y-auto pr-1">
+              <!-- Rendered via js/app.js -->
+            </div>
+
+            <!-- Empty History State -->
+            <div id="history-empty" class="text-center py-8 text-slate-500 text-xs">
+              <svg class="w-8 h-8 mx-auto mb-2 text-slate-600 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
+              <p data-i18n="historyEmpty">No calculations yet. Enter an expression to begin.</p>
+            </div>
+          </div>
+
+          <!-- Quick Links to Calculation Tools -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Percentage Card -->
+            <a href="percentage-calculator.html" class="glass-panel p-4 hover:border-cyan-500/40 transition-all group block">
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-9 h-9 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-lg group-hover:scale-105 transition-transform">
+                  %
+                </div>
+                <div>
+                  <h3 class="text-sm font-bold text-white group-hover:text-cyan-300 transition" data-i18n="percTitle">Percentage Calculator</h3>
+                  <p class="text-xs text-slate-400">Ratios, increase, decrease</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Discount Card -->
+            <a href="discount-calculator.html" class="glass-panel p-4 hover:border-violet-500/40 transition-all group block">
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-9 h-9 rounded-xl bg-violet-500/10 border border-violet-500/20 text-violet-400 flex items-center justify-center font-bold text-lg group-hover:scale-105 transition-transform">
+                  ৳
+                </div>
+                <div>
+                  <h3 class="text-sm font-bold text-white group-hover:text-violet-300 transition" data-i18n="discTitle">Discount Calculator</h3>
+                  <p class="text-xs text-slate-400">Taka (৳), savings, margins</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Monetization / Future Sponsorship Space (Reserved & Disabled) -->
+          <div class="rounded-xl border border-dashed border-slate-800 bg-slate-900/30 p-4 text-center">
+            <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-widest block mb-1" data-i18n="adPlaceholderTitle">
+              Sponsorship & Monetization Space
+            </span>
+            <p class="text-xs text-slate-500 max-w-sm mx-auto" data-i18n="adPlaceholderNotice">
+              Ad space currently reserved. In v1.0.0, advertisements remain strictly disabled for an uninterrupted, clean experience.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Features Section -->
+      <section class="mt-16 pt-12 border-t border-slate-800/80">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="glass-panel p-5">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center mb-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+            </div>
+            <h3 class="text-base font-bold text-white mb-1" data-i18n="feature1Title">100% Client-Side</h3>
+            <p class="text-xs text-slate-400" data-i18n="feature1Desc">Zero server transmissions. All calculations and history stay on your local device.</p>
+          </div>
+
+          <div class="glass-panel p-5">
+            <div class="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 text-violet-400 flex items-center justify-center mb-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" /></svg>
+            </div>
+            <h3 class="text-base font-bold text-white mb-1" data-i18n="feature2Title">Dual Language Support</h3>
+            <p class="text-xs text-slate-400" data-i18n="feature2Desc">Instant switching between English and Bengali with full mathematical fidelity.</p>
+          </div>
+
+          <div class="glass-panel p-5">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center mb-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+            </div>
+            <h3 class="text-base font-bold text-white mb-1" data-i18n="feature3Title">PWA Offline Ready</h3>
+            <p class="text-xs text-slate-400" data-i18n="feature3Desc">Install on mobile or desktop and calculate anywhere, even with zero internet connection.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950/80 py-8 px-4 sm:px-6 lg:px-8 mt-12 text-sm text-slate-400">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <img src="assets/favicon.svg" alt="NexVora Emblem" class="w-6 h-6" />
+          <span class="font-bold text-white">NexVora QuickCalc</span>
+          <span class="text-xs text-slate-500">v1.0.0</span>
+          <span class="text-slate-600">|</span>
+          <span class="text-xs text-cyan-400 font-mono">Calculate Fast. Live Smart.</span>
+        </div>
+        
+        <div class="flex flex-wrap justify-center gap-6 text-xs">
+          <a href="about.html" class="hover:text-cyan-400 transition" data-i18n="navAbout">About</a>
+          <a href="help.html" class="hover:text-cyan-400 transition" data-i18n="navHelp">Help & Shortcuts</a>
+          <a href="privacy.html" class="hover:text-cyan-400 transition" data-i18n="navPrivacy">Privacy Policy</a>
+          <a href="percentage-calculator.html" class="hover:text-cyan-400 transition" data-i18n="navPercentage">Percentage Calculator</a>
+          <a href="discount-calculator.html" class="hover:text-cyan-400 transition" data-i18n="navDiscount">Discount Calculator</a>
+        </div>
+
+        <div class="text-xs text-center md:text-right text-slate-500">
+          <p>© 2026 NexVora Labs Ofc. All Rights Reserved.</p>
+          <p>Developer: Prince AR Abdur Rahman</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Clear History Confirmation Modal -->
+    <div id="clear-history-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+      <div class="glass-panel-elevated max-w-sm w-full p-6 text-center space-y-4">
+        <div class="w-12 h-12 rounded-full bg-red-950/60 border border-red-800 text-red-400 flex items-center justify-center mx-auto">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white" data-i18n="clearHistoryBtn">Clear History</h3>
+        <p class="text-xs text-slate-300" data-i18n="clearHistoryConfirm">
+          Are you sure you want to delete all saved calculations? This cannot be undone.
+        </p>
+        <div class="flex gap-3 justify-center pt-2">
+          <button type="button" id="cancel-clear-history-btn" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition cursor-pointer" data-i18n="clearConfirmCancel">
+            Cancel
+          </button>
+          <button type="button" id="confirm-clear-history-btn" class="px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-semibold transition cursor-pointer" data-i18n="clearConfirmYes">
+            Clear All
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- iOS Safari Installation Guide Modal -->
+    <div id="ios-guide-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+      <div class="glass-panel-elevated max-w-sm w-full p-6 space-y-4 text-center">
+        <div class="w-12 h-12 rounded-2xl bg-cyan-950 text-cyan-400 flex items-center justify-center mx-auto border border-cyan-800">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+        </div>
+        <h3 class="text-base font-bold text-white">Install on iPhone / iPad</h3>
+        <p class="text-xs text-slate-300 text-left space-y-2">
+          1. Tap the <strong>Share</strong> icon in the Safari toolbar.<br />
+          2. Scroll down and tap <strong>Add to Home Screen</strong>.<br />
+          3. Enjoy NexVora QuickCalc offline anytime!
+        </p>
+        <button type="button" id="close-ios-guide-btn" class="w-full py-2 rounded-lg bg-slate-800 text-slate-200 text-xs font-semibold hover:bg-slate-700 transition cursor-pointer">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast-notification" class="hidden fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-xl bg-slate-900 text-cyan-300 text-xs font-medium border border-cyan-500/40 shadow-xl transition-all duration-300 opacity-0 pointer-events-none">
+    </div>
+
+    <!-- App Scripts -->
+    <script src="js/translations.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/tools.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

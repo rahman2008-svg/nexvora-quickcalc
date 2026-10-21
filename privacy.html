@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en" data-theme="dark" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy – NexVora QuickCalc</title>
+    <meta name="description" content="Read the privacy policy of NexVora QuickCalc. Learn how calculations, history, and settings are processed 100% locally on your device." />
+    
+    <!-- OpenGraph Social Cards -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Privacy Policy – NexVora QuickCalc" />
+    <meta property="og:description" content="Local processing, zero telemetry, and LocalStorage data practices of NexVora QuickCalc." />
+    <meta property="og:image" content="assets/logo.svg" />
+    <meta property="og:site_name" content="NexVora QuickCalc" />
+
+    <meta name="theme-color" content="#070b19" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="canonical" href="https://yourdomain.com/privacy.html" />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="text-slate-100 flex flex-col justify-between">
+    <!-- Header -->
+    <header class="sticky top-0 z-40 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/logo.svg" alt="NexVora QuickCalc" class="h-9 w-auto" />
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="index.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navCalculator">Calculator</a>
+          <a href="percentage-calculator.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navPercentage">Percentage</a>
+          <a href="discount-calculator.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navDiscount">Discount</a>
+          <a href="about.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navAbout">About</a>
+          <a href="help.html" class="text-slate-300 hover:text-cyan-400 transition" data-i18n="navHelp">Help</a>
+          <a href="privacy.html" class="text-cyan-400 font-semibold" data-i18n="navPrivacy">Privacy</a>
+        </nav>
+
+        <div class="flex items-center gap-2.5">
+          <button type="button" class="lang-toggle px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800/80 hover:bg-slate-700 text-cyan-400 border border-slate-700/80 transition cursor-pointer">
+            বাংলা
+          </button>
+          <button type="button" class="theme-toggle p-2 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700/80 transition cursor-pointer">
+            <span class="theme-icon flex items-center justify-center">
+              <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+            </span>
+          </button>
+          <a href="index.html" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-cyan-950 text-cyan-300 border border-cyan-800/60 hover:bg-cyan-900/60 transition" data-i18n="btnBackHome">
+            Back to Calculator
+          </a>
+          <button type="button" id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobile-nav" class="hidden md:hidden border-b border-slate-800 bg-slate-900/95 px-4 pt-3 pb-5 space-y-2">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400" data-i18n="navCalculator">Calculator</a>
+        <a href="percentage-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400" data-i18n="navPercentage">Percentage</a>
+        <a href="discount-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400" data-i18n="navDiscount">Discount</a>
+        <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400" data-i18n="navAbout">About</a>
+        <a href="help.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400" data-i18n="navHelp">Help</a>
+        <a href="privacy.html" class="block px-3 py-2 rounded-md text-base font-medium text-cyan-400 bg-slate-800/50" data-i18n="navPrivacy">Privacy</a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+      <div class="text-center mb-10">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-2">
+          Privacy Policy
+        </h1>
+        <p class="text-slate-400 text-sm">
+          Last Updated: October 2026 • NexVora Labs Ofc
+        </p>
+      </div>
+
+      <div class="space-y-6 text-sm text-slate-300">
+        
+        <div class="glass-panel p-6 sm:p-8 space-y-4">
+          <h2 class="text-base font-bold text-white flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            1. Core Principle: 100% Client-Side Processing
+          </h2>
+          <p class="leading-relaxed">
+            At <strong>NexVora Labs Ofc</strong>, your privacy is our primary engineering requirement. NexVora QuickCalc operates completely within your web browser. When you enter numbers, perform calculations, compute percentages, or determine discounts, <strong>none of your mathematical expressions, results, or data are transmitted to any remote web server or third-party database.</strong>
+          </p>
+        </div>
+
+        <div class="glass-panel p-6 sm:p-8 space-y-4">
+          <h2 class="text-base font-bold text-white flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7C5 4 4 5 4 7z" /></svg>
+            2. LocalStorage & Persistent Preferences
+          </h2>
+          <p class="leading-relaxed">
+            The application uses your browser's standard <code>localStorage</code> mechanism strictly for the following local convenience features:
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-xs text-slate-300">
+            <li><strong>Calculation History:</strong> Up to 50 recent calculations are saved locally to allow you to review and reuse previous outputs. You can permanently delete this history at any time using the "Clear History" button.</li>
+            <li><strong>Theme Preference:</strong> Remembers your preference between Dark Mode and Light Mode.</li>
+            <li><strong>Language Preference:</strong> Remembers whether you selected English or বাংলা (Bengali).</li>
+          </ul>
+          <p class="text-xs text-slate-400">
+            This data is stored solely inside your browser profile on your device and is never shared, synced, or sold.
+          </p>
+        </div>
+
+        <div class="glass-panel p-6 sm:p-8 space-y-4">
+          <h2 class="text-base font-bold text-white flex items-center gap-2">
+            <svg class="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg>
+            3. Clipboard Access
+          </h2>
+          <p class="leading-relaxed">
+            NexVora QuickCalc includes a "Copy" function that copies calculation results to your device clipboard upon your explicit click. The application only writes text to the clipboard when you trigger the copy action; it never reads or monitors your clipboard content.
+          </p>
+        </div>
+
+        <div class="glass-panel p-6 sm:p-8 space-y-4">
+          <h2 class="text-base font-bold text-white flex items-center gap-2">
+            <svg class="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+            4. Service Worker & Offline Caching
+          </h2>
+          <p class="leading-relaxed">
+            NexVora QuickCalc registers a Service Worker to cache static site assets (HTML, CSS, JavaScript, and SVG icons) so that the application loads instantly and operates without internet connectivity. The Service Worker does not cache private user calculation data or personally identifiable information.
+          </p>
+        </div>
+
+        <div class="glass-panel p-6 sm:p-8 space-y-4">
+          <h2 class="text-base font-bold text-white flex items-center gap-2">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+            5. Future Monetization & Third-Party Advertising Disclosure
+          </h2>
+          <p class="leading-relaxed">
+            In version 1.0.0, all advertisements are completely disabled. If in future updates NexVora Labs Ofc partners with certified advertising networks (such as Google AdSense), those third-party services may use cookies or web beacons to serve ads according to their respective privacy policies. This privacy policy will be updated transparently prior to any such integration. We do not claim zero data collection in the event third-party services are subsequently enabled.
+          </p>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950/80 py-8 px-4 text-sm text-slate-400">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <img src="assets/favicon.svg" alt="NexVora" class="w-6 h-6" />
+          <span class="font-bold text-white">NexVora QuickCalc</span>
+          <span class="text-xs text-slate-500">v1.0.0</span>
+        </div>
+        <p class="text-xs text-slate-500">© 2026 NexVora Labs Ofc. All Rights Reserved. Developer: Prince AR Abdur Rahman</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/translations.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/tools.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
